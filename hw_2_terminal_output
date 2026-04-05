@@ -136,3 +136,39 @@ toor@practice-server:~/hw_logs$ crontab -l
 
 
 */5 * * * * count=$(find ~/hw_logs -type f -name "*.log" -mtime +1 | wc -l); find ~/hw_logs -type f -name "*.log" -mtime +1 -delete; echo "$(date): deleted $count files" >> ~/hw_logs/clean.log
+toor@practice-server:~/hw_logs$
+toor@practice-server:~/hw_logs$
+toor@practice-server:~/hw_logs$
+toor@practice-server:~/hw_logs$
+toor@practice-server:~/hw_logs$ pwd
+/home/toor/hw_logs
+toor@practice-server:~/hw_logs$
+toor@practice-server:~/hw_logs$
+toor@practice-server:~/hw_logs$ ls -lah
+total 52K
+drwxrwxr-x  2 toor toor 4.0K Apr  5 23:35 .
+drwxr-x--- 12 toor toor 4.0K Apr  5 23:28 ..
+-rw-rw-r--  1 toor toor   39 Apr  5 23:25 app_1.txt
+-rw-rw-r--  1 toor toor   21 Apr  5 23:25 app_2.txt
+-rw-rw-r--  1 toor toor   27 Apr  5 23:26 app_3.txt
+-rw-rw-r--  1 toor toor   49 Apr  5 23:35 clean.log
+-rw-rw-r--  1 toor toor   23 Apr  5 23:26 debug.log
+-rw-rw-r--  1 toor toor   20 Apr  5 23:25 error_1.log
+-rw-rw-r--  1 toor toor   20 Apr  5 23:25 error_2.log
+-rw-rw-r--  1 toor toor   37 Apr  5 23:25 error_3.log
+-rw-rw-r--  1 toor toor   27 Apr  5 23:25 error_4.log
+-rw-rw-r--  1 toor toor   25 Apr  5 23:25 error_5.log
+-rw-rw-r--  1 toor toor  294 Apr  5 23:27 report.txt
+toor@practice-server:~/hw_logs$
+toor@practice-server:~/hw_logs$
+toor@practice-server:~/hw_logs$ cat clean.log
+Sun Apr  5 11:35:01 PM +06 2026: deleted 0 files
+toor@practice-server:~/hw_logs$
+toor@practice-server:~/hw_logs$
+toor@practice-server:~/hw_logs$ cat report.txt
+/home/toor/hw_logs/error_4.log:1:WARNING: CPU usage is high
+/home/toor/hw_logs/error_5.log:1:ERROR: Permission denied
+/home/toor/hw_logs/error_3.log:1:ERROR: Failed to connect to database
+/home/toor/hw_logs/error_1.log:1:ERROR: Disk is full
+/home/toor/hw_logs/error_2.log:1:WARNING: Low memory
+toor@practice-server:~/hw_logs$
