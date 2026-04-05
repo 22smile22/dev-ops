@@ -1,0 +1,110 @@
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ls -lah
+total 12K
+drwxrwxr-x 2 toor toor 4.0K Apr  5 22:58 .
+drwxrwxr-x 4 toor toor 4.0K Apr  5 22:58 ..
+-rw-rw-r-- 1 toor toor  670 Apr  5 23:03 hw_1.txt
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ nano script
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ nano script.sh
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ cat script
+#!/bin/bash
+echo Hello
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ cat script.sh
+#!/bin/bash
+echo Hello
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ls -lah
+total 20K
+drwxrwxr-x 2 toor toor 4.0K Apr  5 23:05 .
+drwxrwxr-x 4 toor toor 4.0K Apr  5 22:58 ..
+-rw-rw-r-- 1 toor toor  670 Apr  5 23:03 hw_1.txt
+-rw-rw-r-- 1 toor toor   23 Apr  5 23:05 script
+-rw-rw-r-- 1 toor toor   23 Apr  5 23:05 script.sh
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ chmod +x script script.sh
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ls -lah     total 20K
+drwxrwxr-x 2 toor toor 4.0K Apr  5 23:05 .
+drwxrwxr-x 4 toor toor 4.0K Apr  5 22:58 ..
+-rw-rw-r-- 1 toor toor  670 Apr  5 23:03 hw_1.txt
+-rwxrwxr-x 1 toor toor   23 Apr  5 23:05 script
+-rwxrwxr-x 1 toor toor   23 Apr  5 23:05 script.sh
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ln -s script script_soft
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ln script.sh script_hard
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ls -lah
+total 24K
+drwxrwxr-x 2 toor toor 4.0K Apr  5 23:08 .
+drwxrwxr-x 4 toor toor 4.0K Apr  5 22:58 ..
+-rw-rw-r-- 1 toor toor  670 Apr  5 23:03 hw_1.txt
+-rwxrwxr-x 1 toor toor   23 Apr  5 23:05 script
+-rwxrwxr-x 2 toor toor   23 Apr  5 23:05 script_hard
+-rwxrwxr-x 2 toor toor   23 Apr  5 23:05 script.sh
+lrwxrwxrwx 1 toor toor    6 Apr  5 23:08 script_soft -> script
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ls -li
+total 16
+393273 -rw-rw-r-- 1 toor toor 670 Apr  5 23:03 hw_1.txt
+393275 -rwxrwxr-x 1 toor toor  23 Apr  5 23:05 script
+393276 -rwxrwxr-x 2 toor toor  23 Apr  5 23:05 script_hard
+393276 -rwxrwxr-x 2 toor toor  23 Apr  5 23:05 script.sh
+393274 lrwxrwxrwx 1 toor toor   6 Apr  5 23:08 script_soft -> script
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ./script_soft
+Hello
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ./script_hard
+Hello
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ rm -rf script script.sh
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ls -lah
+total 16K
+drwxrwxr-x 2 toor toor 4.0K Apr  5 23:10 .
+drwxrwxr-x 4 toor toor 4.0K Apr  5 22:58 ..
+-rw-rw-r-- 1 toor toor  670 Apr  5 23:03 hw_1.txt
+-rwxrwxr-x 1 toor toor   23 Apr  5 23:05 script_hard
+lrwxrwxrwx 1 toor toor    6 Apr  5 23:08 script_soft -> script
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ./script_soft
+-bash: ./script_soft: No such file or directory
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ./script_hard
+Hello
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ls -lah
+total 16K
+drwxrwxr-x 2 toor toor 4.0K Apr  5 23:10 .
+drwxrwxr-x 4 toor toor 4.0K Apr  5 22:58 ..
+-rw-rw-r-- 1 toor toor  670 Apr  5 23:03 hw_1.txt
+-rwxrwxr-x 1 toor toor   23 Apr  5 23:05 script_hard
+lrwxrwxrwx 1 toor toor    6 Apr  5 23:08 script_soft -> script
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ rm -rf script_soft script_hard
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$ ls -lah
+total 12K
+drwxrwxr-x 2 toor toor 4.0K Apr  5 23:10 .
+drwxrwxr-x 4 toor toor 4.0K Apr  5 22:58 ..
+-rw-rw-r-- 1 toor toor  670 Apr  5 23:03 hw_1.txt
+toor@practice-server:~/homework/hw_1$
+toor@practice-server:~/homework/hw_1$
